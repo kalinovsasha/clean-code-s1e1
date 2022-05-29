@@ -23,6 +23,7 @@ var createNewTaskElement=function(taskString){
     var checkBox=document.createElement("input");//checkbx
     //label
     var label=document.createElement("label");//label
+    label.className="task tasks__label";
     //input (text)
     var editInput=document.createElement("input");//text
     //button.edit
@@ -31,6 +32,7 @@ var createNewTaskElement=function(taskString){
     //button.delete
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
+    
 
     label.innerText=taskString;
     label.className='task';
@@ -45,6 +47,8 @@ var createNewTaskElement=function(taskString){
 
     deleteButton.className="delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.classList.add("delete-img");
+    console.log(deleteButtonImg.classList.entries())
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -64,7 +68,9 @@ var addTask=function(){
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
     var listItem=createNewTaskElement(taskInput.value);
-
+    listItem.children[0].className="tasks__item__checkbox";
+    listItem.children[1].className="task tasks__label";
+    listItem.children[2].className="task tasks__item__text-input";
     //Append listItem to incompleteTaskHolder
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
@@ -121,6 +127,9 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    listItem.children[0].className="tasks__item__checkbox";
+    listItem.children[1].className="task tasks__label";
+    listItem.children[2].className="task tasks__item__text-input";
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -133,6 +142,9 @@ var taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
+    listItem.children[0].className="tasks__item__checkbox";
+    listItem.children[1].className="task tasks__label";
+    listItem.children[2].className="task tasks__item__text-input";
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
