@@ -12,11 +12,11 @@
     text-align: right;
 }
 
-.header-img {
+.header-container__img {
     width: 100%;
 }
 
-.inf {
+.header-container__inf{
     font-family: fantasy, cursive;
 }
 
@@ -40,7 +40,7 @@
     flex-grow: 1;
 }
 
-.task-wrapper {
+.add-item__task-wrapper {
     display: flex;
 }
 
@@ -122,8 +122,8 @@ input#new-task {
     align-items: center;
 }
 
-.edit,
-.delete,
+.button-edit,
+.button-delete,
 .task {
     vertical-align: middle;
 }
@@ -132,7 +132,7 @@ input#new-task {
     margin: 0 10px;
 }
 
-.tasks__label {
+.tasks__item__label {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
@@ -170,6 +170,6 @@ input#new-task {
     width: 224px;
 }
 
-.edit-mode .tasks__label {
+.edit-mode .tasks__item__label {
     display: none;
 }
