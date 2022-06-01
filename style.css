@@ -57,8 +57,9 @@ input,
 button{
     outline: none;
 }
-
-button {
+.button-edit,
+.button-delete,
+.add-item__button {
     background: none;
     border: 0px;
     color: #888;
@@ -67,14 +68,15 @@ button {
     font-family: Lato, sans-serif;
     cursor: pointer;
 }
-
-button:hover {
+.button-edit:hover,
+.buttons-delete:hover,
+.add-item__button:hover {
     color: #3a3a3a;
 }
 
 /* Heading */
 .title,
-label[for="new-task"] {
+.add-item__label {
     color: #333;
     font-weight: 700;
     font-size: 15px;
